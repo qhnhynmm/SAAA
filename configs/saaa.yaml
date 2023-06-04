@@ -3,10 +3,10 @@ TASK: ClassificationTask
 DATASET:
   FEATURE_DATASET:
     TYPE: FeatureClassificationDataset
-    BATCH_SIZE: 60
-    WORKERS: 2
+    BATCH_SIZE: 64
+    WORKERS: 0
     FEATURE_PATH:
-      FEATURES: features/OpenViVQA/features/x152++_faster_rcnn
+      FEATURES: /content/content/vinvl_vinvl
       SCENE_TEXT: null
       IMAGE: null
   VOCAB:
@@ -25,13 +25,13 @@ DATASET:
     QUESTION_TOKEN: <question>
     ANSWER_TOKEN: <answer>
     JSON_PATH:
-      TRAIN: features/OpenViVQA/annotations/OpenViVQA_train.json
-      DEV: features/OpenViVQA/annotations/OpenViVQA_dev.json
-      TEST: features/OpenViVQA/annotations/OpenViVQA_test.json
+      TRAIN: /content/drive/MyDrive/vivqa_on_book_cover/Em_Xi_Ay_En/train.json
+      DEV: /content/drive/MyDrive/vivqa_on_book_cover/Em_Xi_Ay_En/dev.json
+      TEST: /content/drive/MyDrive/vivqa_on_book_cover/Em_Xi_Ay_En/test.json
   JSON_PATH:
-    TRAIN: features/OpenViVQA/annotations/OpenViVQA_train.json
-    DEV: features/OpenViVQA/annotations/OpenViVQA_dev.json
-    TEST: features/OpenViVQA/annotations/OpenViVQA_test.json
+    TRAIN: /content/drive/MyDrive/vivqa_on_book_cover/Em_Xi_Ay_En/train.json
+    DEV: /content/drive/MyDrive/vivqa_on_book_cover/Em_Xi_Ay_En/dev.json
+    TEST: /content/drive/MyDrive/vivqa_on_book_cover/Em_Xi_Ay_En/test.json
 
 TRAINING:
   CHECKPOINT_PATH: saved_models
@@ -48,7 +48,7 @@ MODEL:
   D_MODEL: 512
   VISION_PROCESSOR:
     ARCHITECTURE: FeatureEmbedding
-    D_FEATURE: 1024
+    D_FEATURE: 2048
     D_MODEL: 512
     DROPOUT: .1
   TEXT_PROCESSOR:
